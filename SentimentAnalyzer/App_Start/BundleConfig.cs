@@ -23,6 +23,19 @@ namespace SentimentAnalyzer
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-route.js",
+                                      "~/Scripts/angular-local-storage.js",
+                "~/Scripts/angular-resource.js",
+                "~/Scripts/angular-local-storage.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularConfig").Include(
+                  "~/app/app.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/features")
+                .IncludeDirectory("~/app/features", "*.js", true));
         }
     }
 }

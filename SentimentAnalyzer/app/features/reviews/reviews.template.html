@@ -1,0 +1,92 @@
+﻿
+
+<div class="col-md-8 col-md-offset-2">
+
+    <div class="alert alert-dismissible alert-warning" style="margin-top: 30px; height: 65px;">
+        <div class="form-group">
+            <label class="col-lg-3 control-label" style="line-height: 35px;">Application ID: </label>
+            <div class="col-lg-7">
+                <input type="text" class="form-control" ng-model="applicationId" placeholder="ex: com.xd.tothemoon">
+            </div>
+            <a class="btn btn-primary col-md-2"ng-click="getReviews()">Get reviews</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-2 col-md-offset-5 text-center" ng-if="overviewLoading">
+    <img class="loader" src="/app/loader.gif"/>
+</div>
+
+<div class="col-md-12" style="margin-top: 50px">
+    <table class="table table-striped table-hover  ">
+        <thead>
+        <tr>
+            <th>Application name</th>
+            <th>Total reviews</th>
+            <th>5 stars</th>
+            <th>4 stars</th>
+            <th>3 stars</th>
+            <th>2 stars</th>
+            <th>1 star</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-if="!reviewsOverview">
+            <td colspan="7">Search for an application.</td>
+
+        </tr>
+        <tr class="active" ng-if="reviewsOverview">
+            <td>{{reviewsOverview.applicationName}}</td>
+            <td>{{reviewsOverview.totalReviews | number}}</td>
+            <td>{{reviewsOverview.fiveStarsReviews | number}}</td>
+            <td>{{reviewsOverview.fourStarsReviews | number}}</td>
+            <td>{{reviewsOverview.threeStarsReviews | number}}</td>
+            <td>{{reviewsOverview.twoStarsReviews | number}}</td>
+            <td>{{reviewsOverview.oneStarReviews | number}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-2 col-md-offset-5" ng-if="reviewsOverview" ng-click="getSentiment()">
+    <a class="btn btn-primary btn-lg">Analyze reviews</a>
+</div>
+
+<div class="col-md-2 col-md-offset-5 text-center" ng-if="sentimentLoading">
+    <img class="loader" src="/app/loader.gif" />
+</div>
+
+
+<div class="col-md-12" style="margin-top: 50px" ng-if="sentimentResult">
+    <table class="table table-striped table-hover  ">
+        <thead>
+        <tr>
+            <th></th>
+            <th class="text-center">Extreme positive</th>
+            <th class="text-center">Positive</th>
+            <th class="text-center">Neutral</th>
+            <th class="text-center">Negative</th>
+            <th class="text-center">Extreme negative</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <tr class="active" >
+                <td>Count of words</td>
+                <td class="text-center">{{sentimentResult.extremePositiveWords.length}}</td>
+                <td class="text-center">{{sentimentResult.positiveWords.length}}</td>
+                <td class="text-center">{{sentimentResult.neutralWords.length}}</td>
+                <td class="text-center">{{sentimentResult.negativeWords.length}}</td>
+                <td class="text-center">{{sentimentResult.extremeNegativeWords.length}}</td>
+            </tr>
+            <tr class="active" ng-if="reviewsOverview">
+                <td>Score</td>
+                <td class="text-center">{{sentimentResult.extremePositiveWeight}}</td>
+                <td class="text-center">{{sentimentResult.positiveWeight}}</td>
+                <td class="text-center">{{sentimentResult.neutralWeight}}</td>
+                <td class="text-center">{{sentimentResult.negativeWeight}}</td>
+                <td class="text-center">{{sentimentResult.extremeNegativeWeight}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
