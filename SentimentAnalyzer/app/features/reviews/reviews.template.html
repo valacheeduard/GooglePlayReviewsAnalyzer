@@ -87,6 +87,10 @@
                 <td class="text-center">{{sentimentResult.negativeWeight}}</td>
                 <td class="text-center">{{sentimentResult.extremeNegativeWeight}}</td>
             </tr>
+            <tr class="active" ng-if="reviewsOverview">
+                <td>Net attraction</td>
+                <td class="text-center" colspan="5">{{sentimentResult.extremePositiveWeight + sentimentResult.positiveWeight + sentimentResult.neutralWeight + sentimentResult.negativeWeight + sentimentResult.extremeNegativeWeight}}</td>
+            </tr>
         </tbody>
     </table>
 </div>

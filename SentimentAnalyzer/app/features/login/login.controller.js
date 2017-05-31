@@ -1,6 +1,6 @@
 ﻿
 angular.module('myApp').controller('LoginController', [
-    '$scope',  'AuthorizationService','$window',
+    '$scope', 'AuthorizationService','$window',
     function ($scope, AuthorizationService, $window) {
 
         $scope.user = {

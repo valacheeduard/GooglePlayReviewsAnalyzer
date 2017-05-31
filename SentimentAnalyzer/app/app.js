@@ -23,9 +23,7 @@ app.config(['$routeProvider', '$httpProvider', '$windowProvider', '$injector',
             });
     }]);
 
-
-
-app.run(function ($rootScope) {
+app.run(['$rootScope', function ($rootScope) {
 
     $rootScope.logOff = function() {
         localStorage.removeItem('ls.authorizationData');
@@ -35,4 +33,4 @@ app.run(function ($rootScope) {
         console.log(localStorage.getItem('ls.authorizationData'));
         return localStorage.getItem('ls.authorizationData');
     };
-});
+}]);
