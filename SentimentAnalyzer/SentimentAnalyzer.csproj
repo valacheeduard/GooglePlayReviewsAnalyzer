@@ -246,6 +246,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\features\administrator\addKeywordModal.controller.js" />
+    <Content Include="app\features\administrator\addKeywordModal.template.html" />
+    <Content Include="app\features\administrator\admin.controller.js" />
+    <Content Include="app\features\administrator\admin.template.html" />
+    <Content Include="app\features\administrator\keyword.service.js" />
     <Content Include="app\features\login\login.controller.js" />
     <Content Include="app\features\login\login.service.js" />
     <Content Include="app\features\login\login.template.html" />
@@ -257,6 +262,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -287,6 +293,10 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />

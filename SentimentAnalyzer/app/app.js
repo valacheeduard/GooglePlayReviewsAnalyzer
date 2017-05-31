@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule']);
+﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ui.bootstrap']);
 
 app.config(['$routeProvider', '$httpProvider', '$windowProvider', '$injector',
     function ($routeProvider, $httpProvider, $windowProvider, $injector) {
@@ -23,3 +23,16 @@ app.config(['$routeProvider', '$httpProvider', '$windowProvider', '$injector',
             });
     }]);
 
+
+
+app.run(function ($rootScope) {
+
+    $rootScope.logOff = function() {
+        localStorage.removeItem('ls.authorizationData');
+    };
+
+    $rootScope.isAuthenticated = function () {
+        console.log(localStorage.getItem('ls.authorizationData'));
+        return localStorage.getItem('ls.authorizationData');
+    };
+});

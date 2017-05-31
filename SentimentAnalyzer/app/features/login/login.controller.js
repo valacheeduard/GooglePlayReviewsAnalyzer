@@ -1,7 +1,7 @@
 ﻿
 angular.module('myApp').controller('LoginController', [
-    '$scope',  'AuthorizationService',
-    function ($scope, AuthorizationService) {
+    '$scope',  'AuthorizationService','$window',
+    function ($scope, AuthorizationService, $window) {
 
         $scope.user = {
             email: null,
@@ -11,7 +11,9 @@ angular.module('myApp').controller('LoginController', [
         // 'Admin123@'
 
         $scope.login = function () {
-            AuthorizationService.login($scope.user.email, $scope.user.password);
+            AuthorizationService.login($scope.user.email, $scope.user.password).then(function() {
+                $window.location.href = '#!/admin';
+            });
         };
     }
 ]);

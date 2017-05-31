@@ -1,7 +1,14 @@
-﻿namespace SentimentAnalyzer.Contracts
+﻿using System.Collections.Generic;
+using SentimentAnalyzer.Domain;
+
+namespace SentimentAnalyzer.Contracts
 {
     public interface IKeywordsAppService
     {
-        void AddKeyword(string keyword, string categoryCode);
+        Keyword AddKeyword(string keyword, string categoryCode);
+
+        IEnumerable<Keyword> GetAll();
+
+        void Delete(string id);
     }
 }

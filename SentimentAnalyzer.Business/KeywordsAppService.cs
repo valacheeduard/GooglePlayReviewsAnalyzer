@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SentimentAnalyzer.Contracts;
 using SentimentAnalyzer.DataAccess;
 using SentimentAnalyzer.Domain;
@@ -14,7 +15,7 @@ namespace SentimentAnalyzer.Business
             repository = new KeywordRepository();
         } 
 
-        public void AddKeyword(string keyword, string categoryCode)
+        public Keyword AddKeyword(string keyword, string categoryCode)
         {
             var newKeyword = new Keyword
             {
@@ -51,6 +52,18 @@ namespace SentimentAnalyzer.Business
             }
 
             repository.Add(newKeyword);
+
+            return newKeyword;
+        }
+
+        public IEnumerable<Keyword> GetAll()
+        {
+            return repository.GetAll();
+        }
+
+        public void Delete(string id)
+        {
+            repository.Remove(id);
         }
     }
 }

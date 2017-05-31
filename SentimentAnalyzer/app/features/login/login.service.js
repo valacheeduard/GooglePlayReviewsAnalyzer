@@ -37,6 +37,10 @@
 
     };
 
+    var isAuthenticated = function() {
+        return localStorageService.get('authorizationData');
+    };
+
     //var logOut = function () {
 
     //    localStorageService.remove('authorizationData');
@@ -65,6 +69,10 @@
     return {
         login: function (email, password) {
             return login(email, password);
+        },
+
+        isAuthenticated: function() {
+            return isAuthenticated();
         }
     }
 }]);

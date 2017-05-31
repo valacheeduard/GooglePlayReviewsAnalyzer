@@ -55,5 +55,10 @@ namespace SentimentAnalyzer.DataAccess
 
             return foundEmployee;
         }
+
+        public void Remove(string id)
+        {
+            collection.DeleteOne(x => x.Id == id);
+        }
     }
 }

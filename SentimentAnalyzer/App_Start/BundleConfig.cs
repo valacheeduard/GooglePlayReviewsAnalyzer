@@ -27,9 +27,11 @@ namespace SentimentAnalyzer
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
-                                      "~/Scripts/angular-local-storage.js",
+                "~/Scripts/angular-local-storage.js",
                 "~/Scripts/angular-resource.js",
-                "~/Scripts/angular-local-storage.js"));
+                "~/Scripts/angular-local-storage.js",
+                "~/Scripts/angular-ui/ui-bootstrap.js",
+                "~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularConfig").Include(
                   "~/app/app.js"));

@@ -16,14 +16,19 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="#!/reviews">Reviews</a>
+                    </li>
+                    <li ng-if="isAuthenticated()">
                         <a href="#!/admin">Admin</a>
                     </li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li>Log off</li>
+                <ul class="nav navbar-nav navbar-right" ng-if="!isAuthenticated()">
+                    <li><a href="#!/login">Login</a></li>
                 </ul>
-
+                <ul class="nav navbar-nav navbar-right" ng-if="isAuthenticated()">
+                    <li><a ng-click="logOff()">Log off</a></li>
+                </ul>
 
             </div>
         </div>

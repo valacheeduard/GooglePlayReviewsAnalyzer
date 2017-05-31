@@ -1,78 +1,123 @@
 ﻿
 
 <h1>Manage keywords</h1>
+<div style="margin-top: 50px">
+    <div class="col-md-4">
+        <table class="table  table-hover" style="border: 1px solid #808080">
+            <thead>
+                <tr>
+                    <th style="line-height: 37px;">
+                        Extreme Positive
+                        <a class="btn btn-success pull-right" ng-click="addKeyword('EXP')">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="height: 450px; display: block; overflow-y: scroll;">
+                <tr class="success" ng-repeat="keyword in keywordsList | filter:{ category: 'EXP' } : true |filter:search:strict">
+                    <td style="width: 500px;">
+                        {{keyword.content}}
+                        <span ng-click="deleteKeyword(keyword.id)"
+                              class="glyphicon glyphicon-remove pull-right" 
+                              style="cursor: pointer"
+                              aria-hidden="true"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div class="col-md-2">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Extreme Positive</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="col-md-4">
+        <table class="table table-hover" style="border: 1px solid #808080">
+            <thead>
+                <tr>
+                    <th style="line-height: 37px;">
+                        Positive
+                        <a class="btn btn-primary pull-right" ng-click="addKeyword('P')">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="height: 450px; display: block; overflow-y: scroll;">
+                <tr class="info" ng-repeat="keyword in keywordsList | filter:{ category: 'P' } : true |filter:search:strict">
+                    <td style="width: 500px;">
+                        {{keyword.content}}
+                        <span ng-click="deleteKeyword(keyword.id)"
+                              class="glyphicon glyphicon-remove pull-right"
+                              style="cursor: pointer"
+                              aria-hidden="true"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div class="col-md-2">
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>Positive</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="col-md-4">
+        <table class="table table-hover" style="border: 1px solid #808080">
+            <thead>
+                <tr>
+                    <th style="line-height: 37px;">
+                        Neutral
+                        <a class="btn btn-default pull-right" ng-click="addKeyword('NEUT')">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="height: 450px; display: block; overflow-y: scroll;">
+                <tr class="active" ng-repeat="keyword in keywordsList  | filter:{ category: 'NEUT' } : true |filter:search:strict">
+                    <td style="width: 500px;">
+                        {{keyword.content}}
+                        <span ng-click="deleteKeyword(keyword.id)"
+                              class="glyphicon glyphicon-remove pull-right"
+                              style="cursor: pointer"
+                              aria-hidden="true"></span>                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div class="col-md-2">
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>Neutral</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="col-md-4">
+        <table class="table table-hover" style="border: 1px solid #808080">
+            <thead>
+                <tr>
+                    <th style="line-height: 37px;">
+                        Negative
+                        <a class="btn btn-warning pull-right" ng-click="addKeyword('N')">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="height: 450px; display: block; overflow-y: scroll;">
+                <tr class="warning" ng-repeat="keyword in keywordsList  | filter:{ category: 'N' } : true |filter:search:strict">
+                    <td style="width: 500px;">
+                        {{keyword.content}}
+                        <span ng-click="deleteKeyword(keyword.id)"
+                              class="glyphicon glyphicon-remove pull-right"
+                              style="cursor: pointer"
+                              aria-hidden="true"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div class="col-md-2">
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>Negative</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="col-md-2">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Extreme negative</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="col-md-4">
+        <table class="table  table-hover" style="border: 1px solid #808080">
+            <thead>
+                <tr>
+                    <th style="line-height: 37px;">
+                        Extreme negative
+                        <a class="btn btn-danger pull-right" ng-click="addKeyword('EXN')">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="height: 450px; display: block; overflow-y: scroll;">
+                <tr class="danger" ng-repeat="keyword in keywordsList  | filter:{ category: 'EXN' } : true |filter:search:strict">
+                    <td style="width: 500px;">
+                        {{keyword.content}}
+                        <span ng-click="deleteKeyword(keyword.id)"
+                              class="glyphicon glyphicon-remove pull-right"
+                              style="cursor: pointer"
+                              aria-hidden="true"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
