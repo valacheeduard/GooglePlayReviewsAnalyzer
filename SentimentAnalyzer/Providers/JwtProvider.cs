@@ -21,7 +21,7 @@ namespace SentimentAnalyzer.Providers
                 sub = userId,
                 name = userEmail,
                 role,
-                exp = DateTime.Now.AddHours(2).ToString()
+                exp = DateTime.Now.AddHours(8).ToString()
             };
 
             var hashAlgorithm = new HMACSHA256(Encoding.UTF8.GetBytes(secretKey));

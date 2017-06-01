@@ -4,9 +4,11 @@ using System.Web.Http;
 using SentimentAnalyzer.Business;
 using SentimentAnalyzer.Business.DTOs;
 using SentimentAnalyzer.Contracts;
+using SentimentAnalyzer.Providers;
 
 namespace SentimentAnalyzer.Controllers
 {
+    [TokenAuthorization]
     public class KeywordController : ApiController
     {
         private readonly IKeywordsAppService appService;

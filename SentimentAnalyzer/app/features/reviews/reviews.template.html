@@ -6,7 +6,7 @@
         <div class="form-group">
             <label class="col-lg-3 control-label" style="line-height: 35px;">Application ID: </label>
             <div class="col-lg-7">
-                <input type="text" class="form-control" ng-model="applicationId" placeholder="ex: com.xd.tothemoon">
+                <input type="text" class="form-control" ng-model="applicationId" placeholder="ex: com.facebook.katana">
             </div>
             <a class="btn btn-primary col-md-2"ng-click="getReviews()">Get reviews</a>
         </div>
@@ -93,4 +93,9 @@
             </tr>
         </tbody>
     </table>
+</div>      
+
+
+<div class="col-md-2 col-md-offset-5 text-center" ng-if="sentimentResult" ng-click="downloadSentiment()">
+    <a class="btn btn-primary btn-lg">Download</a>
 </div>

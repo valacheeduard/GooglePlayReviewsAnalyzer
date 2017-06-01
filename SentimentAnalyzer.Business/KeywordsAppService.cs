@@ -20,7 +20,7 @@ namespace SentimentAnalyzer.Business
             var newKeyword = new Keyword
             {
                 Id = Guid.NewGuid().ToString(),
-                Content = keyword
+                Content = keyword.ToLower()
             };
 
             switch (categoryCode)

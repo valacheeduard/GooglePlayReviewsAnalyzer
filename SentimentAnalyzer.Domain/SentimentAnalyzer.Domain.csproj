@@ -76,7 +76,9 @@
     <Compile Include="KeywordCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewsOverviewDto.cs" />
+    <Compile Include="SentimentAnalysisDocument.cs" />
     <Compile Include="SentimentAnalysisResult.cs" />
+    <Compile Include="SentimentCommentAnalysisDocument.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

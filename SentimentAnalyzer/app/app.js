@@ -21,6 +21,9 @@ app.config(['$routeProvider', '$httpProvider', '$windowProvider', '$injector',
             .otherwise({
                 redirectTo: '/reviews'
             });
+
+        $httpProvider.interceptors.push('authInterceptorService');
+
     }]);
 
 app.run(['$rootScope', function ($rootScope) {
@@ -30,7 +33,6 @@ app.run(['$rootScope', function ($rootScope) {
     };
 
     $rootScope.isAuthenticated = function () {
-        console.log(localStorage.getItem('ls.authorizationData'));
         return localStorage.getItem('ls.authorizationData');
     };
 }]);

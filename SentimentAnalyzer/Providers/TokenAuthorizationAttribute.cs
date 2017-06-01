@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http.Filters;
 using System.Web.Http.Results;
+using Newtonsoft.Json.Linq;
 
 namespace SentimentAnalyzer.Providers
 {
@@ -39,7 +40,17 @@ namespace SentimentAnalyzer.Providers
                 return Task.FromResult(0);
             }
 
-            var result = jwtProvider.DecodeToken(tokenSource);
+            JObject result = new JObject();
+
+            try
+            {
+                result = jwtProvider.DecodeToken(tokenSource);
+            }
+            catch (Exception e)
+            {
+                context.ErrorResult = new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);
+                return Task.FromResult(0);
+            }
 
             if (result == null)
             {
